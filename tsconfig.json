@@ -23,6 +23,6 @@
     "outDir": "dist",
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["server/**/*.ts"],
+  "include": ["netlify/functions/**/*.ts", "server/**/*.ts"],
   "exclude": ["node_modules"]
 }

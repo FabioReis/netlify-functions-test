@@ -15,6 +15,7 @@ export default class ExpressServer {
   private routes: (app: Application) => void;
   constructor() {
     const root = path.normalize(__dirname + '/../..');
+    console.log(root);
     app.use(bodyParser.json({ limit: process.env.REQUEST_LIMIT || '100kb' }));
     app.use(
       bodyParser.urlencoded({
@@ -57,6 +58,10 @@ export default class ExpressServer {
 
     http.createServer(app).listen(port, welcome(port));
 
+    return app;
+  }
+
+  getApp(): Application {
     return app;
   }
 }
